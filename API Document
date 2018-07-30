@@ -1,0 +1,65 @@
+API Document
+
+1) Get all profiles
+	GET : localhost:8080/app/profile
+
+	Response : 
+		[
+		    {
+		        "profile_id": 2,
+		        "name": "Name",
+		        "age": 25,
+		        "gender": "male"
+		    }
+		]
+
+2) Get Profile by Id
+	GET : localhost:8080/app/profile/2
+
+	Response :
+		{
+		    "profile_id": 2,
+		    "name": "Name",
+		    "age": 25,
+		    "gender": "male"
+		}
+
+3) Update Profile
+	PUT : localhost:8080/app/profile/2
+
+	Input Parameters : 
+		name:Gourab
+		age:31
+		gender:male
+
+	Response : 
+		{
+		    "profile_id": 2,
+		    "name": "Gourab",
+		    "age": 31,
+		    "gender": "male"
+		}
+
+4) Add Profile
+	POST : localhost:8080/app/profile
+
+	Input Parameters : 
+		name:Jack
+		age:30
+		gender:male
+
+	Response : 
+		[
+		    {
+		        "profile_id": 2,
+		        "name": "Gourab",
+		        "age": 31,
+		        "gender": "male"
+		    },
+		    {
+		        "profile_id": 3,
+		        "name": "Jack",
+		        "age": 30,
+		        "gender": "male"
+		    }
+		]
