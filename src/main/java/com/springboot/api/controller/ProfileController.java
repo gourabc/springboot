@@ -24,13 +24,18 @@ public class ProfileController {
 	@RequestMapping(method = RequestMethod.GET)
 	public ArrayList<Profile> getAllProfiles(){
 		ArrayList<Profile> profiles = profileService.getAllProfiles();
+//		ArrayList<Profile> profiles = profileService.getAllDBProfiles();
 		return profiles;
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public Profile getProfileById(@PathVariable String id){
 		Profile profile = profileService.getProfile(Integer.parseInt(id));
-		return profile;
+//		Profile profile = profileService.getDBProfile(Integer.parseInt(id));
+		if(profile!=null)
+			return profile;
+		else
+			return null;
 	}	
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
@@ -45,17 +50,20 @@ public class ProfileController {
 		profile.setGender(gender);
 		
 		profile = profileService.updateProfile(Integer.parseInt(id), profile);
+//		profile = profileService.updateDBProfile(Integer.parseInt(id), profile);
 		return profile;
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public List<Profile> addProfile(Profile newProfile){		
 		return profileService.addProfile(newProfile);
+//		return profileService.addDBProfile(newProfile);
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public String deleteProfile(@PathVariable String id){		
 		String result = profileService.deleteProfile(Integer.parseInt(id));
+//		String result = profileService.deleteDBProfile(Integer.parseInt(id));
 		return result;
 	}
 }

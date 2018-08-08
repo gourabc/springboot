@@ -1,14 +1,39 @@
 API Document
 
+---------- In-App Implementation ----------
 1) Get all profiles
 	GET : localhost:8080/app/profile
 
 	Response : 
 		[
 		    {
+		        "profile_id": 1,
+		        "name": "Gourab",
+		        "age": 30,
+		        "gender": "male"
+		    },
+		    {
 		        "profile_id": 2,
-		        "name": "Name",
-		        "age": 25,
+		        "name": "Jack",
+		        "age": 18,
+		        "gender": "male"
+		    },
+		    {
+		        "profile_id": 3,
+		        "name": "Natasha",
+		        "age": 22,
+		        "gender": "female"
+		    },
+		    {
+		        "profile_id": 4,
+		        "name": "Kyle",
+		        "age": 35,
+		        "gender": "male"
+		    },
+		    {
+		        "profile_id": 5,
+		        "name": "Sam",
+		        "age": 41,
 		        "gender": "male"
 		    }
 		]
@@ -16,50 +41,173 @@ API Document
 2) Get Profile by Id
 	GET : localhost:8080/app/profile/2
 
-	Response :
+	Response : If profile exists
 		{
 		    "profile_id": 2,
-		    "name": "Name",
-		    "age": 25,
+		    "name": "Jack",
+		    "age": 18,
 		    "gender": "male"
 		}
 
+	Response : If profile does not exist
+		<null>	
+
+
 3) Update Profile
 	PUT : localhost:8080/app/profile/2
+	
+	Input Parameters : 
+		name:Jack
+		age:30
+		gender:male
+
+	Response : If profile exists
+		{
+		    "profile_id": 2,
+		    "name": "Jack",
+		    "age": 30,
+		    "gender": "male"
+		}
+
+	Response : If profile does not exist
+		<null>
+
+4) Add Profile
+	POST : localhost:8080/app/profile
+
+	Input Parameters : 
+		name:Rohan
+		age:27
+		gender:male
+
+	Response : 
+		[
+		    {
+		        "profile_id": 1,
+		        "name": "Gourab",
+		        "age": 30,
+		        "gender": "male"
+		    },
+		    {
+		        "profile_id": 2,
+		        "name": "Jack",
+		        "age": 18,
+		        "gender": "male"
+		    },
+		    {
+		        "profile_id": 3,
+		        "name": "Natasha",
+		        "age": 22,
+		        "gender": "female"
+		    },
+		    {
+		        "profile_id": 4,
+		        "name": "Kyle",
+		        "age": 35,
+		        "gender": "male"
+		    },
+		    {
+		        "profile_id": 5,
+		        "name": "Sam",
+		        "age": 41,
+		        "gender": "male"
+		    },
+		    {
+		        "profile_id": 6,
+		        "name": "Rohan",
+		        "age": 27,
+		        "gender": "male"
+		    }
+		]
+
+5) Delete Profile
+	DELETE : localhost:8080/app/profile/2
+
+	Response : If profile exists
+		Profile Deleted
+
+	Response : If profile does not exist
+		Profile does not exist.
+
+
+
+---------- DB Implementation ----------
+
+1) Get all profiles
+	GET : localhost:8080/app/profile
+
+	Response : if profile exists
+		[
+		    {
+		        "profile_id": 4,
+		        "name": "Gourab",
+		        "age": 30,
+		        "gender": "male"
+		    }
+		]
+
+2) Get Profile by Id
+	GET : localhost:8080/app/profile/4
+
+	Response : If profile exists
+		{
+		    "profile_id": 4,
+		    "name": "Gourab",
+		    "age": 30,
+		    "gender": "male"
+		}
+
+	Response : If profile does not exist
+		<null>	
+
+3) Update Profile
+	PUT : localhost:8080/app/profile/4
 
 	Input Parameters : 
 		name:Gourab
 		age:31
 		gender:male
 
-	Response : 
+	Response : If profile exists
 		{
-		    "profile_id": 2,
+		    "profile_id": 4,
 		    "name": "Gourab",
 		    "age": 31,
 		    "gender": "male"
 		}
+
+	Response : If profile does not exist
+		<null>
 
 4) Add Profile
 	POST : localhost:8080/app/profile
 
 	Input Parameters : 
 		name:Jack
-		age:30
+		age:25
 		gender:male
 
-	Response : 
+	Response : Returns all Profiles
 		[
 		    {
-		        "profile_id": 2,
+		        "profile_id": 4,
 		        "name": "Gourab",
 		        "age": 31,
 		        "gender": "male"
 		    },
 		    {
-		        "profile_id": 3,
+		        "profile_id": 5,
 		        "name": "Jack",
-		        "age": 30,
+		        "age": 25,
 		        "gender": "male"
 		    }
 		]
+
+5) Delete Profile
+	DELETE : localhost:8080/app/profile/2
+
+	Response : If profile exists
+		Profile Deleted
+
+	Response : If profile does not exist
+		Profile does not exist.

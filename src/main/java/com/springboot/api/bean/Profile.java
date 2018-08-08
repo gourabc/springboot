@@ -6,6 +6,17 @@ public class Profile {
 	int age;
 	String gender;
 	
+	//Default Constructor
+	public Profile(){}
+	
+	//In-App Implementation
+	public Profile(int profile_id, String name, int age, String gender){
+		this.profile_id = profile_id;
+		this.name = name;
+		this.age = age;		
+		this.gender = gender;
+	}
+	
 	public int getProfile_id() {
 		return profile_id;
 	}

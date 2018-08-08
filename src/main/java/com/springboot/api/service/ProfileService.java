@@ -34,4 +34,25 @@ public class ProfileService {
 	public String deleteProfile(int id){
 		return profileDAOImpl.deleteProfile(id);
 	}
+	
+	//DB Implementation	
+	public ArrayList<Profile> getAllDBProfiles(){
+		return profileDAOImpl.getAllDBProfiles();		
+	}
+	
+	public Profile getDBProfile(int id){
+		return profileDAOImpl.getDBProfile(id);
+	}
+	
+	public Profile updateDBProfile(int id, Profile profile){
+		return profileDAOImpl.updateDBProfile(id, profile);
+	}
+	
+	public List<Profile> addDBProfile(Profile newProfile){
+		return profileDAOImpl.addDBProfile(newProfile);
+	}
+	
+	public String deleteDBProfile(int id){
+		return profileDAOImpl.deleteDBProfile(id);
+	}
 }
