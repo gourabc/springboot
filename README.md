@@ -23,4 +23,4 @@ By default, the data is handled in app itself. However there is also a facility 
 **Reference Link**
 - [Maven Install](https://www.youtube.com/watch?v=vHGdjKuXKAs)
 
-Please refer the [API Document](/API_DOCUMENT.doc) for API Links and expected Response.
+Please refer the [API Document](https://github.com/gourabc/springboot/blob/master/API_Document.doc) for API Links and expected Response.
